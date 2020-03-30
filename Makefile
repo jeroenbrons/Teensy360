@@ -5,7 +5,7 @@ TARGET = $(notdir $(CURDIR))
 OPTIONS = -DF_CPU=48000000 -DUSB_SERIAL -DLAYOUT_US_ENGLISH
 
 # options needed by many Arduino libraries to configure for Teensy 3.0
-OPTIONS += -D__MK20DX128__ -DARDUIO=104
+OPTIONS += -D__MK20DX256__ -DARDUIO=104
 
 BUILDDIR = $(abspath $(CURDIR)/build)
 
@@ -34,7 +34,7 @@ CXXFLAGS = -std=gnu++0x -felide-constructors -fno-exceptions -fno-rtti
 # compiler options for C only
 CFLAGS =
 
-LDSCRIPT = teensy3/mk20dx128.ld
+LDSCRIPT = teensy3/mk20dx256.ld
 
 # linker options
 LDFLAGS = -Os -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -T$(LDSCRIPT)

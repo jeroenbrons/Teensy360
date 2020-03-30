@@ -13,7 +13,7 @@
  * 1. The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
  *
- * 2. If the Software is incorporated into a build system that allows 
+ * 2. If the Software is incorporated into a build system that allows
  * selection among a list of target devices, then similar target
  * devices manufactured by PJRC.COM must be included in the list of
  * target devices and selectable in the same manner.
@@ -30,8 +30,8 @@
 
 MEMORY
 {
-	FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 128K
-	RAM  (rwx) : ORIGIN = 0x1FFFE000, LENGTH = 16K
+	FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 256K
+	RAM  (rwx) : ORIGIN = 0x1FFF8000, LENGTH = 64K
 }
 
 ENTRY(_VectorsFlash)
@@ -108,7 +108,9 @@ SECTIONS
 	} > RAM
 
 	_estack = ORIGIN(RAM) + LENGTH(RAM);
-	_teensy_model_identifier = 0x1D;
+	_teensy_model_identifier = 0x21;
 }
+
+
 
 
